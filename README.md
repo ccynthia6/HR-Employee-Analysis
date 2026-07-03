@@ -344,11 +344,10 @@ hr-employee-analysis/
 
 ## About
 
-This project is part of my data analytics portfolio, demonstrating end-to-end competency across data cleaning, python analysis, business problem framing, and dashboard storytelling.
+This project is part of my data analytics portfolio, demonstrating end-to-end competency across data cleaning, statistical analysis, business problem framing, and dashboard storytelling.
 
 **Portfolio:** [your-portfolio-link]  
 **LinkedIn:** [your-linkedin]  
-**Tableau Public:** [your-tableau-link]
 
 ---
 
