@@ -1,6 +1,6 @@
 # HR Analytics: Employee Attrition & Performance
 
-**Tools:** Excel (formulas, statistical testing, pivot tables) → Power BI (DAX, interactive dashboard)
+**Tools:** Excel (formulas, statistical testing, pivot tables) → Power BI (DAX, interactive dashboard)  
 **Dataset:** [IBM HR Analytics Employee Attrition & Performance](https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset) — 1,470 employees, 35 columns
 
 ---
@@ -20,7 +20,23 @@ This project treats the dataset like a real HR analytics request: clean the raw 
 
 ---
 
-## Data Cleaning
+## Table of Contents
+
+1. [Data Cleaning](#1-data-cleaning)
+2. [Excel Analysis](#2-excel-analysis)
+   1.[Descriptive Analysis](#1-descriptive-analysis)
+   2.[T-Test Analysis](#2-t-test-analysis)
+   3.[Confidence Intervals](#3-confidence-intervals)
+   4.[Correlation Matrix](#4-correlation-matrix)
+   5.[A/B Testing](#5-a/b-testing)
+   6.[Pivot Analysis](#6-pivot-analysis)
+3. [Power BI Dashboard](#3-power-bi-dashboard)
+4. [Key Findings](#4-key-findings)
+5. [Recommendations](#5-recommendations)
+
+---
+
+## 1.  Data Cleaning
 
 Raw HR exports usually carry columns that look like data but carry zero analytical value — constants, duplicated flags, IDs. Leaving them in bloats the model, can skew correlation/variance calculations if accidentally swept into a range, and signals sloppy QA to anyone reviewing the workbook. I cleaned first so every downstream formula and DAX measure runs against a lean, purpose-built table rather than the raw 35-column dump.
 
@@ -67,7 +83,7 @@ Income OT No                = IF([OverTime]="No",  [MonthlyIncome], "")
 
 ---
 
-## Excel Analysis
+## 2.  Excel Analysis
 
 ### 1. Descriptive Statistics
 
@@ -112,6 +128,8 @@ P-Value = T.TEST(array1, array2, 2, 2)
 | Satisfaction Score — Leavers vs. Stayed | 0.0000000155 | **Statistically significant** — leavers scored consistently lower on satisfaction |
 | Income — Overtime Yes vs. No | 0.8155515298 | **Not significant** — overtime workers aren't paid meaningfully more despite the extra workload |
 
+**Finding:** Leavers earn less and are less satisfied than stayers, and both gaps are real (not chance) — but overtime employees aren't compensated any differently than non-overtime employees, even though they carry the extra workload.
+
 ### 3. Confidence Intervals
 
 The t-test tells me *whether* a difference is significant, but not *how big or reliable* it is. Confidence intervals give a range for the true population income of leavers vs. stayers, so I can check whether those ranges overlap. If they did overlap, the "income gap" would be a fragile finding that might vanish with a different sample; since they don't, I can tell leadership the gap is structural, not statistical luck — which is a stronger claim than the t-test alone supports.
@@ -148,13 +166,19 @@ Attrition Rate = Employees Who Left / Total Employees
 T-Test (Attrition/Satisfaction) = T.TEST(array1, array2, 2, 3)
 ```
 
-![A/B test: overtime vs non-overtime employees](images/07_ab_testing.png)
-
 | Metric | No Overtime (n=1,054) | Overtime (n=416) |
 |---|---|---|
+| Total Employees | 1,054 | 416 |
+| Employees Who Left | 110 | 127 |
 | Attrition Rate | 10% | **31%** |
 | Avg. Monthly Income | $6,484.93 | $6,548.55 |
 | Avg. Satisfaction | 2.69 | 2.80 |
+| T-Test P-Value (Attrition) | 0.0000000000 | — |
+| T-Test P-Value (Income) | 0.8155515298 | — |
+
+
+![A/B test: overtime vs non-overtime employees](images/07_ab_testing.png)
+
 
 **Finding:** Overtime employees leave at **3x the rate** of non-overtime employees (p < 0.001, statistically significant), yet they earn almost the same income (p = 0.82, not significant). Overtime is a real attrition driver that isn't being compensated for.
 
@@ -182,7 +206,7 @@ The tests above validate specific relationships (income, satisfaction, overtime)
 
 ---
 
-## Power BI Dashboard
+## 3.  Power BI Dashboard
 
 Excel proved *which* relationships were statistically real, but it's a static, one-audience-at-a-time tool — a stakeholder can't easily filter the t-test results by department on their own. I moved the validated findings into Power BI so the same conclusions become explorable: an HR manager can slice attrition by their own department, age group, or overtime status without needing me to re-run formulas. DAX measures (vs. hardcoded numbers) also mean every KPI recalculates live as slicers change, instead of me building a separate static chart for every possible filter combination.
 
@@ -250,7 +274,7 @@ This page confirms the Excel statistical findings visually: attrition for overti
 
 ---
 
-## Key Findings
+## 4.  Key Findings
 
 1. **Overtime is the single strongest attrition driver identified.** Overtime employees leave at 31% vs. 10% for non-overtime employees (p < 0.001) — and they aren't paid meaningfully more for it (p = 0.82).
 2. **Income and satisfaction gaps between leavers and stayers are statistically real, not sampling noise.** The 95% confidence intervals for leaver vs. stayer income don't overlap ($4,321–$5,253 vs. $6,564–$7,102).
@@ -259,7 +283,7 @@ This page confirms the Excel statistical findings visually: attrition for overti
 5. **Most numeric variables are weak predictors on their own.** Outside of income's link to age and tenure, the correlation matrix shows negligible relationships — attrition here is better explained by categorical factors (role, overtime, tenure bucket) than by a single continuous variable.
 6. **The cost is concrete and measurable:** $1.13M in monthly income tied to departed employees, with a 42.73% pay gap between who leaves and who stays.
 
-## Recommendations
+## 5.  Recommendations
 
 - **Audit overtime policy in Sales and HR first** — these departments combine high attrition with high overtime exposure; compensating overtime properly (or reducing reliance on it) is likely the highest-leverage fix.
 - **Build a structured 0–2 year onboarding/retention program.** The tenure data shows the first two years are by far the highest-risk window — targeted check-ins, mentorship, or early compensation review could meaningfully cut this bucket's 29.82% attrition rate.
@@ -278,6 +302,14 @@ This page confirms the Excel statistical findings visually: attrition for overti
 └── README.md
 ```
 
-## Dataset Source
+## About
 
-[IBM HR Analytics Employee Attrition & Performance](https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset) — Kaggle, uploaded by Pavan Subhash. 1,470 rows, 35 original columns, simulated by IBM data scientists.
+This project is part of my data analytics portfolio, demonstrating end-to-end competency across data cleaning, python analysis, business problem framing, and dashboard storytelling.
+
+**Portfolio:** [your-portfolio-link]  
+**LinkedIn:** [your-linkedin]  
+**Tableau Public:** [your-tableau-link]
+
+---
+
+*Built with Excel · DAX · Tableau · IBM HR Employee Attrition and Performance data*
