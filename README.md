@@ -3,7 +3,6 @@
 
 
 ---
-[csv](https://docs.google.com/spreadsheets/d/1d6Bdb8a3uMrXeOUonADkC3ODThtyS6h26Cp1G4Z-Fs8/edit?usp=sharing)
 
 ## Business Context
 
@@ -33,6 +32,12 @@ This project treats the dataset like a real HR analytics request: clean the raw 
 
 ---
 
+## Quick Links
+
+Full Excel Workbook: </br>
+[HR Employee Attrition Analysis](https://docs.google.com/spreadsheets/d/1d6Bdb8a3uMrXeOUonADkC3ODThtyS6h26Cp1G4Z-Fs8/edit?usp=sharing)
+
+---
 
 ## Table of Contents
 
