@@ -1,10 +1,9 @@
 # HR Analytics: Employee Attrition & Performance
 ### Excel · DAX · Power BI 
 
-**Tools:** Excel (formulas, statistical testing, pivot tables) → Power BI (DAX, interactive dashboard)  
-**Dataset:** [IBM HR Analytics Employee Attrition & Performance](https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset) — 1,470 employees, 35 columns
 
 ---
+
 
 ## Business Context
 
@@ -19,7 +18,21 @@ This project treats the dataset like a real HR analytics request: clean the raw 
 - Does overtime actually drive people to leave — and if so, is the company even compensating for it?
 - How much income (payroll investment) is walking out the door because of attrition?
 
+
 ---
+
+
+## Dataset and Tools
+
+| Stage | Tools |
+|---|---|
+| **Dataset** | [IBM HR Analytics Employee Attrition & Performance](https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset) |
+| **Sample Size** | 1,470 employees, 35 columns |
+| **Tools** | Excel (formulas, statistical testing, pivot tables) → Power BI (DAX, interactive dashboard) |
+
+
+---
+
 
 ## Table of Contents
 
