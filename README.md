@@ -316,19 +316,6 @@ This page confirms the Excel statistical findings visually: attrition for overti
 ```
 hr-employee-analysis/
 ├── Excel.xlsx     # Full Excel workbook (raw data, cleaning, analysis, A/B testing, pivots)
-│   ├── 01_Data Cleaning
-│   ├── 02_Excel Analysis
-|      ├── 01_Descriptive Analysis                     
-|      ├── 02_T-Test Analysis
-|      ├── 03_Confidence Intervals
-|      ├── 04_Correlation Matrix
-|      ├── 05_A/B Testing
-|      └── 06_Pivot Analysis
-|   ├── 03_HR_Employee_Dashboard.pbix          # Power BI dashboard file
-|      ├── 01_HR_Employee_Dash                 # Page 1     
-|      └── 02_Key Findings                     # Page 2
-│   ├── 04_Key Findings
-│   └── 05_Recommndations
 ├── images/                             # Screenshots used in this README
 │   ├── 02_descriptive_analysis.png
 │   ├── 03_descriptive_charts.png
