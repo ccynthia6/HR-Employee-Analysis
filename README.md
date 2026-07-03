@@ -311,11 +311,10 @@ This page confirms the Excel statistical findings visually: attrition for overti
 
 ---
 
-## Repo Structure
+## Repository Structure
 
 ```
 hr-employee-analysis/
-├── Excel.xlsx     # Full Excel workbook (raw data, cleaning, analysis, A/B testing, pivots)
 ├── images/                             # Screenshots used in this README
 │   ├── 02_descriptive_analysis.png
 │   ├── 03_descriptive_charts.png
