@@ -134,13 +134,15 @@ A bar chart showing "leavers earn less on average" isn't proof of anything — i
 P-Value = T.TEST(array1, array2, 2, 2)  
 ```
 
-![T-test results: income and satisfaction, leavers vs stayers](images/04_ttest_analysis.png)
-
 | Test | P-Value | Result |
 |---|---|---|
 | Monthly Income — Leavers vs. Stayed | 0.0000000007 | **Statistically significant** — leavers earned $4,787 avg vs. $6,832 for stayers |
 | Satisfaction Score — Leavers vs. Stayed | 0.0000000155 | **Statistically significant** — leavers scored consistently lower on satisfaction |
 | Income — Overtime Yes vs. No | 0.8155515298 | **Not significant** — overtime workers aren't paid meaningfully more despite the extra workload |
+
+
+![T-test results: income and satisfaction, leavers vs stayers](images/04_ttest_analysis.png)
+
 
 **Finding:** Leavers earn less and are less satisfied than stayers, and both gaps are real (not chance) — but overtime employees aren't compensated any differently than non-overtime employees, even though they carry the extra workload.
 
@@ -200,7 +202,6 @@ T-Test (Attrition/Satisfaction) = T.TEST(array1, array2, 2, 3)
 
 The tests above validate specific relationships (income, satisfaction, overtime), but a pivot breakdown was how I first scanned attrition across *every* categorical dimension at once — department, role, tenure, age band, salary tier — before deciding which relationships were even worth formally testing. It's the fast, exploratory pass that pointed me toward overtime and tenure as the variables worth building the A/B test and Power BI dashboard around.
 
-![Pivot analysis: attrition by department, role, tenure, overtime, salary tier, age band](images/07b_pivot_analysis.png)
 
 | Breakdown | Highest Attrition | Lowest Attrition |
 |---|---|---|
@@ -210,6 +211,10 @@ The tests above validate specific relationships (income, satisfaction, overtime)
 | Overtime | Yes — 30.53% | No — 10.44% |
 | Salary Tier | Low — 19.58% | High — 4.86% |
 | Age Band | Young — 27.91% | Senior — 12.59% |
+
+
+![Pivot analysis: attrition by department, role, tenure, overtime, salary tier, age band](images/07b_pivot_analysis.png)
+
 
 **Findings:**
 - Sales Representative is the single riskiest role in the company at 39.76% attrition — more than 4x Research Director's 2.50%, despite Sales having the *highest* average department income ($6,959.17) of the three departments. High pay at the department level clearly isn't protecting the highest-turnover role within it.
