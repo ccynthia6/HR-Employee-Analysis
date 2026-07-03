@@ -202,6 +202,8 @@ T-Test (Attrition/Satisfaction) = T.TEST(array1, array2, 2, 3)
 
 The tests above validate specific relationships (income, satisfaction, overtime), but a pivot breakdown was how I first scanned attrition across *every* categorical dimension at once — department, role, tenure, age band, salary tier — before deciding which relationships were even worth formally testing. It's the fast, exploratory pass that pointed me toward overtime and tenure as the variables worth building the A/B test and Power BI dashboard around.
 
+![Pivot analysis: attrition by department, role, tenure, overtime, salary tier, age band](images/07b_pivot_analysis.png)
+
 
 | Breakdown | Highest Attrition | Lowest Attrition |
 |---|---|---|
@@ -211,9 +213,6 @@ The tests above validate specific relationships (income, satisfaction, overtime)
 | Overtime | Yes — 30.53% | No — 10.44% |
 | Salary Tier | Low — 19.58% | High — 4.86% |
 | Age Band | Young — 27.91% | Senior — 12.59% |
-
-
-![Pivot analysis: attrition by department, role, tenure, overtime, salary tier, age band](images/07b_pivot_analysis.png)
 
 
 **Findings:**
@@ -331,6 +330,15 @@ hr-employee-analysis/
 │   ├── 04_Key Findings
 │   └── 05_Recommndations
 ├── images/                             # Screenshots used in this README
+│   ├── 02_descriptive_analysis.png
+│   ├── 03_descriptive_charts.png
+│   ├── 04_ttest_analysis.png
+│   ├── 05_confidence_intervals.png
+│   ├── 06_correlation_matrix.png
+│   ├── 07_ab_testing.png
+│   ├── 07b_pivot_analysis.png
+│   ├── 08_powerbi_dashboard.png
+│   └── 09_powerbi_key_findings.png
 └── README.md
 ```
 
