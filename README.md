@@ -27,7 +27,7 @@ This project treats the dataset like a real HR analytics request: clean the raw 
 | Stage | Tools |
 |---|---|
 | **Dataset** | [IBM HR Analytics Employee Attrition & Performance](https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset) |
-| **Sample Size** | 1,470 employees, 35 columns |
+| **Sample Size** | 1,470 rows, 35 columns |
 | **Tools** | Excel (formulas, statistical testing, pivot tables) → Power BI (DAX, interactive dashboard) |
 
 
