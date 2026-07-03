@@ -1,4 +1,5 @@
 # HR Analytics: Employee Attrition & Performance
+### Excel · DAX · Power BI 
 
 **Tools:** Excel (formulas, statistical testing, pivot tables) → Power BI (DAX, interactive dashboard)  
 **Dataset:** [IBM HR Analytics Employee Attrition & Performance](https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset) — 1,470 employees, 35 columns
