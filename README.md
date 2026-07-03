@@ -45,6 +45,7 @@ Working from the raw 1,470 × 35 export, I dropped and derived columns before an
 | `Income OT Yes` / `Income OT No` | Monthly income split by overtime status |
 | `Attrition OT Yes` / `Attrition OT No` | Attrition flag split by overtime status |
 
+
 ```excel
 Age Group                = =IFS([Age]<30,"Young",[Age]<=50,"Middle Age",[Age]>50,"Senior")
 Attrition (Numeric)      = IF([Attrition]="Yes", 1, 0)
@@ -58,6 +59,7 @@ Income Stayed             = IF([Attrition]="No",  [MonthlyIncome], "")
 Income OT Yes              = IF([OverTime]="Yes", [MonthlyIncome], "")
 Income OT No                = IF([OverTime]="No",  [MonthlyIncome], "")
 ```
+
 
 **Workbook structure:**
 
@@ -188,9 +190,7 @@ The statistical findings from Excel were carried into an interactive Power BI da
 
 ### Page 1 — Overview
 
-![HR Employee Dashboard overview](images/08_powerbi_dashboard.png)
-
-Key DAX measures (reconstructed to match the visuals above — adjust to your exact measure names if different):
+Key DAX measures:
 
 ```dax
 Total Employees =
@@ -213,13 +213,15 @@ Rankx(all('Working Sheet'[Department]),[Attrition Rate],,Desc,Dense)
 
 ```
 
+![HR Employee Dashboard overview](images/08_powerbi_dashboard.png)
+
 At a glance: **1,470 employees**, **16.12% attrition** (237 employees), **$6.50K** average monthly income, **2.72** average satisfaction. Sales (20.63%) and HR (19.05%) attrite far faster than R&D (13.84%); the Low salary tier attrites at 4x the rate of the High tier; and Sales Representative is the single riskiest role at **39.76% attrition**.
 
 ### Page 2 — Key Findings
 
 Page 1 answers "where is attrition happening" (department, role, salary tier). Page 2 exists to answer "why, and what is it costing" — pulling together the overtime, tenure, and income findings validated in Excel into one place, alongside a hard dollar figure (`Income Lost to Attrition`) that turns statistical findings into something a budget conversation can use.
 
-![Key findings page: overtime, tenure, and income gap](images/09_powerbi_key_findings.png)
+Key DAX measures:
 
 ```dax
 Avg Income Stayers =
@@ -241,6 +243,8 @@ Overtime Attrition Rate =
 Calculate([Attrition Rate],'Working Sheet'[OverTime]="Yes")
 
 ```
+
+![Key findings page: overtime, tenure, and income gap](images/09_powerbi_key_findings.png)
 
 This page confirms the Excel statistical findings visually: attrition for overtime employees (30.53%) is roughly **3x** that of non-overtime employees (10.44%), and new employees (0–2 years tenure) leave at **29.82%** — by far the highest-risk tenure bucket. Combined income lost to attrition sits at **$1.13M**, with a **42.73%** income gap between stayers and leavers.
 
