@@ -24,11 +24,11 @@ This project treats the dataset like a real HR analytics request: clean the raw 
 
 1. [Data Cleaning](#1-data-cleaning)
 2. [Excel Analysis](#2-excel-analysis) </br>
-   1.[Descriptive Analysis](#1-descriptive-analysis)
-   2.[T-Test Analysis](#2-t-test-analysis)
-   3.[Confidence Intervals](#3-confidence-intervals)
-   4.[Correlation Matrix](#4-correlation-matrix)
-   5.[A/B Testing](#5-a/b-testing)
+   1.[Descriptive Analysis](#1-descriptive-analysis)  </br>
+   2.[T-Test Analysis](#2-t-test-analysis)  </br>
+   3.[Confidence Intervals](#3-confidence-intervals)  </br>
+   4.[Correlation Matrix](#4-correlation-matrix)  </br>
+   5.[A/B Testing](#5-a/b-testing)  </br>
    6.[Pivot Analysis](#6-pivot-analysis)
 4. [Power BI Dashboard](#3-power-bi-dashboard)
 5. [Key Findings](#4-key-findings)
