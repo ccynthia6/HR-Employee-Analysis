@@ -23,8 +23,8 @@ This project treats the dataset like a real HR analytics request: clean the raw 
 ## Table of Contents
 
 1. [Data Cleaning](#1-data-cleaning)
-2. [Excel Analysis](#2-excel-analysis)
- 1.[Descriptive Analysis](#1-descriptive-analysis)
+2. [Excel Analysis](#2-excel-analysis) </br>
+   1.[Descriptive Analysis](#1-descriptive-analysis)
    2.[T-Test Analysis](#2-t-test-analysis)
    3.[Confidence Intervals](#3-confidence-intervals)
    4.[Correlation Matrix](#4-correlation-matrix)
