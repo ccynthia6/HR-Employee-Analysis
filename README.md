@@ -90,11 +90,6 @@ Income OT Yes              = IF([OverTime]="Yes", [MonthlyIncome], "")
 Income OT No                = IF([OverTime]="No",  [MonthlyIncome], "")
 ```
 
-
-**Workbook structure:**
-
-![Workbook tabs and structure](images/01_readme_tabs.png)
-
 ---
 
 ## 2.  Excel Analysis
