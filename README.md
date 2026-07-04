@@ -88,7 +88,7 @@ Overtime (Numeric)      = IF([Overtime]="Yes", 1, 0)
 Tenure Year Bucket      = IFS( [YearsAtCompany] <= 2, "0-2 Years", [YearsAtCompany] <= 5, "3-5 Years",
                                [YearsAtCompany] <= 10, "6-10 Years", [YearsAtCompany] <= 20, "11-20 Years",
                                [YearsAtCompany] > 20,"20+ Years")
-Total Satisfaction Score = AVERAGE([@EnvironmentSatisfaction], [@JobSatisfaction], [@RelationshipSatisfaction])
+Total Satisfaction Score = AVERAGE([EnvironmentSatisfaction], [JobSatisfaction], [RelationshipSatisfaction])
 Income Left               = IF([Attrition]="Yes", [MonthlyIncome], "")
 Income Stayed             = IF([Attrition]="No",  [MonthlyIncome], "")
 Income OT Yes              = IF([OverTime]="Yes", [MonthlyIncome], "")
