@@ -332,8 +332,8 @@ hr-employee-analysis/
 
 This project is part of my data analytics portfolio, demonstrating end-to-end competency across data cleaning, statistical analysis, business problem framing, and dashboard storytelling.
 
-**Portfolio:** [your-portfolio-link]  
-**LinkedIn:** [your-linkedin]  
+**Portfolio:** [link](https://ccynthia6.github.io/Portfolio/)  
+**LinkedIn:** [link](https://www.linkedin.com/in/cynthia-christina-00573a24a/)
 
 ---
 
